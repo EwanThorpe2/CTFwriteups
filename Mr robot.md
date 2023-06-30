@@ -18,3 +18,7 @@ I then used the found username with the same dic file and got no success finding
 
 I then used the rockyou.txt file to find the password
 
+# tools used
+I could of continued to use burpsuite but its slow for such a large dataset.
+I decided to use WPScan as it allows for faster password attacks
+
