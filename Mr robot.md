@@ -9,5 +9,12 @@ I tried each of these and beyond the cool visuals got nothing from them.
 I then decided to scan the directory of the site using dirsearch.
 Upon completion i saw the site was using robots.txt which is a file that excludes items from webcrawling.
 After opening robots.txt you will see the file name for the first flag which was then found.
+You will also find a .dir file containing what i think is possible usernames to the website
 
+# flag 2
+For the next step i investigated the wordpress login i found during the dirsearch
+I used burpsuite with the dictionary found during flag one and got the username "elliot"
+I then used the found username with the same dic file and got no success
+
+I then used the rockyou.txt file to find the password
 
