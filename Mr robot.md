@@ -14,7 +14,7 @@ You will also find a .dir file containing what i think is possible usernames to 
 # flag 2
 For the next step i investigated the wordpress login i found during the dirsearch
 I used burpsuite with the dictionary found during flag one and got the username "elliot"
-I then used the found username with the same dic file and got no success
+I then used the found username with the same dic file and got no success finding the password
 
 I then used the rockyou.txt file to find the password
 
