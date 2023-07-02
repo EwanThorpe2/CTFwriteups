@@ -60,4 +60,16 @@ hashcat -m 0 /home/kali/Desktop/hash /home/kali/Desktop/wordlists/rockyou.txt
 ```
 That successfully gives you the password
 
+### the trouble
+After this i was stuck on how to login to the user i had now got the password for.
+I tried to SSH into it but couldnt get passed a connection fail
+This is when someone suggested i needed to include the bin/bash folder so using python i did this with the command
+```
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+after this i could login as robot by doing 
+```
+su robot
+```
+
 
