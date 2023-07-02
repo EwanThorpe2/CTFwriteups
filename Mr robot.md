@@ -14,11 +14,50 @@ You will also find a .dir file containing what i think is possible usernames to 
 # flag 2
 For the next step i investigated the wordpress login i found during the dirsearch
 I used burpsuite with the dictionary found during flag one and got the username "elliot"
-I then used the found username with the same dic file and got no success finding the password
-
-I then used the rockyou.txt file to find the password
+I then used the found username with the same dic file
 
 ### tools used
 I could of continued to use burpsuite but its slow for such a large dataset.
-I decided to use WPScan as it allows for faster password attacks
+I decided to use WPScan as it allows for faster password attacks since its not limited 
+
+After the password wordlist had ran for abit i got the password.
+
+Once i had access to the wordpress i needed to find a way to get a shell on my terminal from the vulnerable machine
+
+For this i used a PHP reverse shell exploit from Pentestmonkey
+https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+I inserted the code into the archive.php site and then when i go to this site the exploit will auto execute giving me a reverse shell
+First i set up the listener
+```
+└─$ nc -nvlp 8080      
+listening on [any] 8080 ...
+```
+
+then when i went to the site i got the execution of exploit and a shell in my terminal 
+```
+connect to [IP] from (UNKNOWN) [IP] 50319
+Linux linux 3.13.0-55-generic #94-Ubuntu SMP Thu Jun 18 00:27:10 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+ 11:45:12 up 13:26,  0 users,  load average: 0.00, 0.01, 0.38
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+/bin/sh: 0: can't access tty; job control turned off
+$ 
+```
+### what i found using the reverse shell
+in the /home/robot/ directory is two files
+key-2-of-3.txt
+and a password hash
+
+I cannot access the key without the correct permissions so for this we will need to crack the password hash.
+```
+robot:c3fcd3d76192e4007dfb496cca67e13b
+```
+is the password has for robots user
+For the cracking of the hash i used hashcat with the following command
+
+```
+hashcat -m 0 /home/kali/Desktop/hash /home/kali/Desktop/wordlists/rockyou.txt
+```
+That successfully gives you the password
+
 
