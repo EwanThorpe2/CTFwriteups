@@ -53,11 +53,7 @@ I cannot access the key without the correct permissions so for this we will need
 robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
 is the password has for robots user
-For the cracking of the hash i used hashcat with the following command
-
-```
-hashcat -m 0 /home/kali/Desktop/hash /home/kali/Desktop/wordlists/rockyou.txt
-```
+For the cracking of the hash i used a online md5 cracking website
 That successfully gives you the password
 
 ### the trouble
@@ -71,5 +67,11 @@ after this i could login as robot by doing
 ```
 su robot
 ```
+and the password
+
+Once i had the user set as robot i was able to go to /home/robot and open key-2-of-3.txt successfully getting the key
+
+# flag 3
+
 
 
