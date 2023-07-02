@@ -20,7 +20,7 @@ I then used the found username with the same dic file
 I could of continued to use burpsuite but its slow for such a large dataset.
 I decided to use WPScan as it allows for faster password attacks since its not limited 
 
-After the password wordlist had ran for abit i got the password.
+After the wordlist i found earlier had ran for abit i got the password.
 
 Once i had access to the wordpress i needed to find a way to get a shell on my terminal from the vulnerable machine
 
