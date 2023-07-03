@@ -28,6 +28,7 @@ Once i had access to the wordpress i needed to find a way to get a shell on my t
 For this i used a PHP reverse shell exploit from Pentestmonkey
 https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
 I inserted the code into the archive.php site and then when i go to this site the exploit will auto execute giving me a reverse shell
+
 First i set up the listener
 ```
 └─$ nc -nvlp 8080      
