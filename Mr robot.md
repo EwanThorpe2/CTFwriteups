@@ -98,5 +98,16 @@ nmap --interactive
 After this you will have root access and in the root folder you will find key-3-of-3.txt
 
 # complete! 
+## What did i learn
+- NMAP Scanning for open services
+- webcrawling from the terminal
+- using wordlists to find username and passwords
+- creating a reverse shell using already avaliable tools
+- stablizing a shell using python
+- Using shells
+- Hosting my own files to a webserver
+- using LinEnum to identify potential flaws in a system
+- exploiting SUIDs using GTFOBins
+- Exploring linux filesystems
 
-
+Overall i learned alot
