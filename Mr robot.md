@@ -22,6 +22,7 @@ I decided to use WPScan as it allows for faster password attacks since its not l
 
 After the wordlist i found earlier had ran for abit i got the password.
 
+### PHP reverse shell
 Once i had access to the wordpress i needed to find a way to get a shell on my terminal from the vulnerable machine
 
 For this i used a PHP reverse shell exploit from Pentestmonkey
